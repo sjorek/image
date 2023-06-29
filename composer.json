@@ -1,0 +1,38 @@
+{
+    "name": "sjorek/image",
+    "type": "library",
+    "description": "image command comparing two images",
+    "license": "GPL-3.0+",
+    "bin": ["bin/image"],
+    "require": {
+        "php": "^8.2",
+        "ext-imagick": "^3.7",
+        "symfony/console": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sjorek\\Image\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        }
+    },
+    "scripts": {
+        "lint:all": [
+            "@lint:php-cs-fixer"
+        ],
+        "lint:all:fix": [
+            "@lint:php-cs-fixer:fix"
+        ],
+        "lint:php-cs-fixer": "@lint:php-cs-fixer:fix --dry-run",
+        "lint:php-cs-fixer:fix": "php-cs-fixer fix --ansi --config=.php-cs-fixer.dist.php --using-cache=yes --diff"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.22"
+    }
+}
